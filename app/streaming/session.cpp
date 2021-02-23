@@ -428,6 +428,15 @@ bool Session::initialize()
     m_StreamConfig.bitrate = m_Preferences->bitrateKbps;
     m_StreamConfig.hevcBitratePercentageMultiplier = 75;
 
+    // PORTS
+    m_StreamConfig.http_port = m_Preferences->http_port;
+    m_StreamConfig.https_port = m_Preferences->https_port;
+    m_StreamConfig.rtsp_setup_port = m_Preferences->rtsp_setup_port;
+    m_StreamConfig.video_stream_port = m_Preferences->video_stream_port;
+    m_StreamConfig.audio_stream_port = m_Preferences->audio_stream_port;
+    m_StreamConfig.control_port = m_Preferences->control_port;
+    m_StreamConfig.first_frame_port = m_Preferences->first_frame_port;
+
     SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
                 "Video bitrate: %d kbps",
                 m_StreamConfig.bitrate);

@@ -156,6 +156,9 @@ NvHTTP::launchApp(int appId,
 
     memcpy(&riKeyId, streamConfig->remoteInputAesIv, sizeof(riKeyId));
     riKeyId = qFromBigEndian(riKeyId);
+    // PORTS
+    m_BaseUrlHttp.setPort(streamConfig->httpPort);
+    m_BaseUrlHttps.setPort(streamConfig->httpsPort);
 
     QString response =
             openConnectionToString(m_BaseUrlHttps,
@@ -191,6 +194,10 @@ NvHTTP::resumeApp(PSTREAM_CONFIGURATION streamConfig)
 
     memcpy(&riKeyId, streamConfig->remoteInputAesIv, sizeof(riKeyId));
     riKeyId = qFromBigEndian(riKeyId);
+
+    // PORTS
+    m_BaseUrlHttp.setPort(streamConfig->httpPort);
+    m_BaseUrlHttps.setPort(streamConfig->httpsPort);
 
     QString response =
             openConnectionToString(m_BaseUrlHttps,

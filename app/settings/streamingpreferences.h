@@ -99,7 +99,15 @@ public:
     Q_PROPERTY(bool reverseScrollDirection MEMBER reverseScrollDirection NOTIFY reverseScrollDirectionChanged)
     Q_PROPERTY(bool swapFaceButtons MEMBER swapFaceButtons NOTIFY swapFaceButtonsChanged)
     Q_PROPERTY(bool captureSysKeys MEMBER captureSysKeys NOTIFY captureSysKeysChanged)
-    Q_PROPERTY(Language language MEMBER language NOTIFY languageChanged);
+    Q_PROPERTY(Language language MEMBER language NOTIFY languageChanged)
+    Q_PROPERTY(int http_port MEMBER http_port NOTIFY displayModeChanged)
+    Q_PROPERTY(int https_port MEMBER https_port NOTIFY displayModeChanged)
+    Q_PROPERTY(int rtsp_setup_port MEMBER rtsp_setup_port NOTIFY displayModeChanged)
+    Q_PROPERTY(int video_stream_port MEMBER video_stream_port NOTIFY displayModeChanged)
+    Q_PROPERTY(int audio_stream_port MEMBER audio_stream_port NOTIFY displayModeChanged)
+    Q_PROPERTY(int control_port MEMBER control_port NOTIFY displayModeChanged)
+    Q_PROPERTY(int first_frame_port MEMBER first_frame_port NOTIFY displayModeChanged);
+    // PORTS ^^^
 
     Q_INVOKABLE bool retranslate();
 
@@ -136,6 +144,14 @@ public:
     WindowMode recommendedFullScreenMode;
     UIDisplayMode uiDisplayMode;
     Language language;
+    // PORTS
+    int http_port;
+    int https_port;
+    int rtsp_setup_port;
+    int video_stream_port;
+    int audio_stream_port;
+    int control_port;
+    int first_frame_port;
 
 signals:
     void displayModeChanged();

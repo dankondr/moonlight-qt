@@ -866,6 +866,103 @@ Flickable {
                 }
             }
         }
+        GroupBox {
+        id: uiSettingsGroupBox
+        width: (parent.width - (parent.leftPadding + parent.rightPadding))
+        padding: 12
+        title: "<font color=\"skyblue\">" + qsTr("Port Settings") + "</font>"
+        font.pointSize: 12
+
+        Column {
+        anchors.fill: parent
+        spacing: 5
+
+        Label {
+            width: parent.width
+            id: languageTitle
+            text: qsTr("HTTP port")
+            font.pointSize: 12
+            wrapMode: Text.Wrap
+        }
+
+        TextField {
+
+        }
+
+        Label {
+            width: parent.width
+            id: languageTitle
+            text: qsTr("HTTPS port")
+            font.pointSize: 12
+            wrapMode: Text.Wrap
+        }
+
+        TextField {
+
+        }
+
+        Label {
+            width: parent.width
+            id: languageTitle
+            text: qsTr("RSTP setup port")
+            font.pointSize: 12
+            wrapMode: Text.Wrap
+        }
+
+        TextField {
+
+        }
+
+        Label {
+            width: parent.width
+            id: languageTitle
+            text: qsTr("Video stream port")
+            font.pointSize: 12
+            wrapMode: Text.Wrap
+        }
+
+        TextField {
+
+        }
+
+        Label {
+            width: parent.width
+            id: languageTitle
+            text: qsTr("Audio stream port")
+            font.pointSize: 12
+            wrapMode: Text.Wrap
+        }
+
+        TextField {
+
+        }
+
+        Label {
+            width: parent.width
+            id: languageTitle
+            text: qsTr("Control port")
+            font.pointSize: 12
+            wrapMode: Text.Wrap
+        }
+
+        TextField {
+
+        }
+
+        Label {
+            width: parent.width
+            id: languageTitle
+            text: qsTr("First frame port")
+            font.pointSize: 12
+            wrapMode: Text.Wrap
+        }
+
+        TextField {
+
+        }
+
+        }
+    }
     }
 
     Column {

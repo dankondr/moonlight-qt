@@ -42,6 +42,14 @@
 #define SER_SWAPFACEBUTTONS "swapfacebuttons"
 #define SER_CAPTURESYSKEYS "capturesyskeys"
 #define SER_LANGUAGE "language"
+// PORTS
+#define SER_HTTP_PORT "http_port"
+#define SER_HTTPS_PORT "https_port"
+#define SER_RTSP_SETUP_PORT "rtsp_setup_port"
+#define SER_VIDEO_STREAM_PORT "video_stream_port"
+#define SER_AUDIO_STREAM_PORT "audio_stream_port"
+#define SER_CONTROL_PORT "control_port"
+#define SER_FIRST_FRAME_PORT "first_frame_port"
 
 #define CURRENT_DEFAULT_VER 1
 
@@ -111,6 +119,15 @@ void StreamingPreferences::reload()
                                                                                                                  : UIDisplayMode::UI_MAXIMIZED)).toInt());
     language = static_cast<Language>(settings.value(SER_LANGUAGE,
                                                     static_cast<int>(Language::LANG_AUTO)).toInt());
+
+    // PORTS
+    http_port = settings.value(SER_HTTP_PORT, 47989).toInt();
+    https_port = settings.value(SER_HTTPS_PORT, 47984).toInt();
+    rtsp_setup_port = settings.value(SER_RTSP_SETUP_PORT, 48010).toInt();
+    video_stream_port = settings.value(SER_VIDEO_STREAM_PORT, 47998).toInt();
+    audio_stream_port = settings.value(SER_AUDIO_STREAM_PORT, 48000).toInt();
+    control_port = settings.value(SER_CONTROL_PORT, 47999).toInt();
+    first_frame_port = settings.value(SER_FIRST_FRAME_PORT, 47996).toInt();
 
 
     // Perform default settings updates as required based on last default version
@@ -228,6 +245,14 @@ void StreamingPreferences::save()
     settings.setValue(SER_REVERSESCROLL, reverseScrollDirection);
     settings.setValue(SER_SWAPFACEBUTTONS, swapFaceButtons);
     settings.setValue(SER_CAPTURESYSKEYS, captureSysKeys);
+    // PORTS
+    settings.setValue(SER_HTTP_PORT, http_port);
+    settings.setValue(SER_HTTPS_PORT, https_port);
+    settings.setValue(SER_RTSP_SETUP_PORT, rtsp_setup_port);
+    settings.setValue(SER_VIDEO_STREAM_PORT, video_stream_port);
+    settings.setValue(SER_AUDIO_STREAM_PORT, audio_stream_port);
+    settings.setValue(SER_CONTROL_PORT, control_port);
+    settings.setValue(SER_FIRST_FRAME_PORT, first_frame_port);
 }
 
 int StreamingPreferences::getDefaultBitrate(int width, int height, int fps)
